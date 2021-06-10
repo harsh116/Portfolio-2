@@ -1,0 +1,148 @@
+.projects {
+  padding-bottom: 2rem;
+
+  &_bio-image {
+    height: 50vh;
+    width: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba($primary-color, 0.9),
+        rgba($primary-color, 0.3)
+      ),
+      url("../img/model-1.jpg") center top;
+
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow-y: auto;
+    // scrollbar-color: yellow green;
+    &::-webkit-scrollbar {
+      width: 8px;
+      border-left: 5px solid #e6ecf8;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba($secondary-color, 0.7);
+    }
+
+    // scrollbar-face-color: #367cd2;
+    // justify-content: flex-end;
+
+    .text-secondary {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+  }
+
+  &_items {
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+
+  &_item {
+    position: relative;
+    border-bottom: 5px solid $secondary-color;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover .project {
+      &_title {
+        opacity: 1;
+      }
+
+      &_description {
+        opacity: 1;
+      }
+    }
+
+    &_content {
+      position: absolute;
+      top: 0;
+      height: 40%;
+      width: 100%;
+      padding: 1rem;
+      z-index: 1;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $secondary-color;
+      opacity: 0;
+      @include transition-ease;
+    }
+
+    &:hover {
+      &::after {
+        top: 0;
+        opacity: 0.9;
+      }
+
+      .projects_btn {
+        opacity: 1;
+      }
+    }
+  }
+
+  &_btns {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  &_btn {
+    opacity: 0;
+    color: set-text-color($secondary-color);
+    @include transition-ease;
+
+    &:hover {
+      color: set-text-color(set-text-color($secondary-color));
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    transform: rotate(90deg) translate(-3rem, -5rem);
+  }
+}
+
+.project {
+  &_title {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    opacity: 0;
+    @include transition-ease;
+  }
+
+  &_description {
+    margin-top: 1rem;
+    text-align: center;
+    opacity: 0;
+    @include transition-ease;
+  }
+}
