@@ -37,3 +37,9 @@ $secondary-color: #ff652f;
     @content;
   }
 }
+
+@mixin media-sh {
+  @media screen and (max-height: 450px) {
+    @content;
+  }
+}

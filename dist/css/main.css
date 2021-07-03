@@ -8,7 +8,7 @@
 .home {
   height: 100%;
   padding-top: 40vh;
-  overflow: hidden;
+  overflow-y: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -540,11 +540,38 @@
 }
 
 @media screen and (max-width: 450px) {
+  .home {
+    padding-top: 30vh;
+  }
   .contact_list {
     font-size: 1.1rem;
   }
   .projects_item:nth-child(2) .project_title {
     font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .home {
+    padding-top: 20vh;
+  }
+  .home h2 {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .home_name {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .contact {
+    padding-top: 20vh;
+  }
+  .contact h2 {
+    margin-bottom: 0rem;
+  }
+  .contact_list {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
 }
 
@@ -555,6 +582,7 @@ body {
 
 body {
   background: #272727;
+  height: 100%;
   color: #fff;
 }
 

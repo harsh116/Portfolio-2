@@ -1,7 +1,7 @@
 .home {
   height: 100%;
   padding-top: 40vh;
-  overflow: hidden;
+  overflow-y: hidden;
   align-items: center;
   text-align: center;
   background: linear-gradient(
@@ -9,7 +9,11 @@
       rgba($primary-color, 0.9),
       rgba($primary-color, 0.3)
     ),
-    url("../img/model-1.jpg") center top;
+    url("../img/model-1.jpg") center top
+
+
+    // center top
+    ;
 
   background-size: cover;
 

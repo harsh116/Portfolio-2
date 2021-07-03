@@ -54,6 +54,11 @@
 }
 
 @include media-xs {
+
+  .home{
+    padding-top: 30vh;
+  }
+
   .contact_list {
     // margin-left: 6rem;
     font-size: 1.1rem;
@@ -64,4 +69,31 @@
     // margin-top: 0.3rem;
     font-size: 0.8rem;
   }
+}
+
+@include media-sh{
+  .home{
+
+    padding-top: 20vh;
+    h2{
+      transform: scale(0.8);
+    }
+
+    &_name{
+      transform: scale(0.8);
+    }
+  }
+
+  .contact{
+    padding-top: 20vh;
+
+    h2{
+      margin-bottom: 0rem;
+    }
+
+    &_list{
+      transform: scale(0.8);
+    }
+  }
+
 }
